@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1b2a">
+<title>WebNaadu | Websites for local businesses</title>
+<meta name="description" content="Pick your industry, choose a website style, see the price, and order in 2 minutes.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+Tamil&family=Noto+Sans+Devanagari&family=Noto+Sans+Malayalam&family=Noto+Sans+Telugu&family=Noto+Sans+Kannada&family=Noto+Sans+Arabic&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d1b2a;--navy2:#16283d;--green:#00a676;--sun:#ffc857;--mist:#f5f7fb;--line:#dde3ee;--mute:#5b6b80;--head:'Sora','Trebuchet MS','Noto Sans Tamil','Noto Sans Devanagari','Noto Sans Malayalam','Noto Sans Telugu','Noto Sans Kannada','Noto Sans Arabic',sans-serif;--body:'Inter','Noto Sans Tamil','Noto Sans Devanagari','Noto Sans Malayalam','Noto Sans Telugu','Noto Sans Kannada','Noto Sans Arabic',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--navy);background:#fff;line-height:1.65}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.hidden{display:none!important}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(13,27,42,.96);backdrop-filter:blur(8px)}
+.lg{position:fixed;inset:0;background:rgba(13,27,42,.6);z-index:60;display:flex;align-items:center;justify-content:center;padding:16px}.lgb{background:#fff;color:var(--navy);border-radius:16px;padding:22px;width:100%;max-width:360px;display:grid;gap:12px}.lgb h3{margin:0}.lgb .btn{margin:0}.lgb .or{text-align:center;color:var(--mute);font-size:.88rem}.lgb .er{color:#c0392b;font-size:.88rem;min-height:1em}
+.lh{display:flex;align-items:center;gap:10px;position:relative}.ac{width:38px;height:38px;border-radius:50%;border:2px solid var(--sun);background:var(--navy2);color:#fff;cursor:pointer;padding:0;overflow:hidden;font-size:1.1rem;display:flex;align-items:center;justify-content:center}.ac img{width:100%;height:100%;object-fit:cover}.acm{position:absolute;top:48px;left:0;width:250px;background:#fff;color:var(--navy);border:1.5px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,.18);font-size:.93rem}.acm .btn{margin:0}.acm .em{color:var(--mute);word-break:break-all}.ord{border:1.5px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:8px;background:#fff}.ord h3{margin:0}.stp{list-style:none;margin:6px 0;padding:0;display:grid;gap:4px}.stp li{color:var(--mute)}.stp li.on{color:var(--green);font-weight:600}.stp li.on::before{content:"\2713 "}.stp li:not(.on)::before{content:"\25CB "}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:var(--head);font-weight:800;font-size:1.25rem;color:#fff;background:none;border:0;cursor:pointer;display:flex;align-items:center;gap:8px}
+.logo i{width:12px;height:12px;border-radius:3px;background:var(--green);display:inline-block;transform:rotate(45deg)}
+nav{display:flex;align-items:center;gap:22px}
+nav a{color:#c8d3e1;text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:#fff}
+/* buttons */
+.btn{display:inline-block;padding:13px 24px;border-radius:12px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:var(--head);background:var(--green);color:#fff;transition:transform .15s,background .15s}
+.btn:hover{background:#00bd88;transform:translateY(-1px)}
+.btn.sun{background:var(--sun);color:var(--navy)}
+.btn.sun:hover{background:#ffd47a}
+.btn.line{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.btn.sm{padding:8px 16px;font-size:.9rem}
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:56px 0 64px;overflow:hidden}
+.hero .wrap{display:grid;gap:40px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h1{font-family:var(--head);font-weight:800;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.1}
+.hero .ta{margin:14px 0 6px;color:var(--sun);font-weight:600}
+.hero p.lead{color:#b9c6d6;max-width:46ch;margin-bottom:26px;font-size:1.05rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.cta .btn.line{border-color:#44586f;color:#fff}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:32px;color:#9fb0c4;font-size:.92rem}
+.facts b{display:block;color:#fff;font-family:var(--head);font-size:1.15rem}
+/* phone demo */
+.stage{display:flex;flex-direction:column;align-items:center;gap:16px}
+.phone{width:250px;height:440px;border-radius:34px;background:#000;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 2px #2a3d54}
+.screen{height:100%;border-radius:25px;overflow:hidden;background:#fff;color:var(--navy);display:flex;flex-direction:column;transition:opacity .25s}
+.screen.fade{opacity:0}
+.s-top{padding:26px 16px 16px;color:#fff;transition:background .3s}
+.s-top small{opacity:.8;font-size:.7rem}
+.s-top h4{font-family:var(--head);font-size:1.15rem;line-height:1.2;margin-top:2px}
+.s-body{padding:12px 14px;display:grid;gap:8px;flex:1;align-content:start}
+.s-row{display:flex;justify-content:space-between;font-size:.82rem;padding:9px 10px;background:var(--mist);border-radius:9px}
+.s-row b{font-weight:600}
+.s-btn{margin:auto 14px 14px;padding:10px;border-radius:10px;text-align:center;color:#fff;font-weight:600;font-size:.85rem;transition:background .3s}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{background:var(--navy2);color:#c8d3e1;border:1px solid #2c4058;border-radius:999px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-family:inherit}
+.chip[aria-pressed="true"]{background:#fff;color:var(--navy);border-color:#fff}
+/* sections */
+section{padding:56px 0}
+section.alt{background:var(--mist)}
+h2{font-family:var(--head);font-size:clamp(1.5rem,3.6vw,2.1rem);line-height:1.2;margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:26px;max-width:56ch}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.ind{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:20px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s,transform .15s}
+.ind:hover{border-color:var(--green);transform:translateY(-2px)}
+.ind span{font-size:1.9rem;display:block;line-height:1.2}
+.ind b{font-family:var(--head);display:block;margin-top:6px}
+.ind small{color:var(--mute)}
+.steps{counter-reset:s}
+.step{border-inline-start:3px solid var(--green);padding:2px 0 2px 0;padding-inline-start:16px}
+.step h3{font-family:var(--head);font-size:1.05rem}
+.step p{color:var(--mute);font-size:.95rem}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.card h3{font-family:var(--head)}
+.card ul{margin:10px 0 14px 18px;color:var(--mute);flex:1}
+.price{font-family:var(--head);font-weight:800;font-size:1.5rem}
+.card .btn{margin-top:12px}
+details{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+details p{margin-top:8px;color:var(--mute)}
+.back{background:none;border:0;color:var(--green);font-weight:600;cursor:pointer;font:inherit;margin-bottom:14px}
+/* order */
+form,.box{display:grid;gap:16px;max-width:600px}
+label{font-weight:600;font-size:.95rem;display:block;margin-bottom:4px}
+input[type=text],input[type=tel],select,textarea{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+input:focus,select:focus,textarea:focus{border-color:var(--green)}
+.chk{display:flex;gap:10px;align-items:center;font-weight:400;padding:10px 0;border-bottom:1px dashed var(--line);margin:0}
+.chk input{width:18px;height:18px;accent-color:var(--green)}
+.chk em{margin-inline-start:auto;font-style:normal;color:var(--mute)}
+.est{background:var(--navy);color:#fff;border-radius:16px;padding:18px}
+.est .price{font-size:2rem;color:var(--sun)}
+.est .hint{color:#9fb0c4}
+.hint{font-size:.88rem;color:var(--mute)}
+.err{color:#b3261e;min-height:1.2em;font-size:.9rem}
+.sum{background:var(--mist);border:1.5px solid var(--line);border-radius:12px;padding:16px;white-space:pre-wrap;font-size:.93rem}
+.chan{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.chan .btn{text-align:center;padding:12px 8px}
+/* contact + float */
+.contact{background:var(--navy);color:#fff}
+.contact h2{color:#fff}.contact .sub{color:#9fb0c4}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.links a{border:1.5px solid #34495f;color:#fff;border-radius:999px;padding:9px 18px;text-decoration:none;font-weight:500}
+.links a:hover{border-color:var(--green);color:var(--green)}
+.fab{position:fixed;inset-inline-end:16px;bottom:88px;z-index:25;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-weight:800;font-family:var(--head);box-shadow:0 8px 20px rgba(0,0,0,.3);font-size:.8rem}
+footer{background:#08121d;color:#8294a9;text-align:center;padding:18px;font-size:.88rem}
+.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 18px;border-radius:10px;display:none;max-width:90%;z-index:40}
+.lang{background:#16283d;color:#fff;border:1px solid #34495f;border-radius:8px;padding:6px 8px;font:inherit;font-size:.85rem}
+.cfab{position:fixed;inset-inline-end:16px;bottom:16px;z-index:26;width:56px;height:56px;border-radius:50%;border:0;background:var(--green);color:#fff;font-size:1.5rem;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.chat{position:fixed;inset-inline-end:12px;bottom:12px;z-index:35;width:min(380px,calc(100vw - 24px));height:min(520px,calc(100vh - 24px));background:#fff;border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden}
+.ch{background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-family:var(--head)}
+.ch button{background:none;border:0;color:#fff;font-size:1.1rem;cursor:pointer}
+.cm{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--mist)}
+.b{max-width:85%;padding:9px 13px;border-radius:14px;font-size:.93rem}
+.b.bot{background:#fff;border:1px solid var(--line);align-self:flex-start}
+.b.me{background:var(--green);color:#fff;align-self:flex-end}
+.acts{display:flex;gap:6px;flex-wrap:wrap}
+.chip2{background:#fff;border:1.5px solid var(--green);color:var(--navy);border-radius:999px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.cf{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+.cf input{flex:1;min-width:0;padding:10px;border:1.5px solid var(--line);border-radius:10px;font:inherit}
+.lw{position:relative}
+.lbtn{background:#fff;color:var(--navy);border:0;border-radius:999px;padding:8px 14px;font:inherit;font-weight:600;font-size:.9rem;cursor:pointer;white-space:nowrap}
+.lbtn:hover{background:var(--sun)}
+.lmenu{position:absolute;inset-inline-end:0;top:46px;background:#fff;color:var(--navy);border-radius:14px;box-shadow:0 16px 40px rgba(0,0,0,.3);min-width:160px;padding:6px;z-index:50}
+.lmenu button{display:block;width:100%;text-align:start;padding:10px 12px;background:none;border:0;border-radius:8px;font:inherit;cursor:pointer}
+.lmenu button:hover{background:var(--mist)}
+.lmenu button.on{font-weight:700;color:var(--green)}
+nav{gap:14px}
+@media (max-width:480px){nav .btn.sm{display:none}}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.stage{order:2}nav a.nl{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="lh"><button class="ac" id="acBtn" type="button" aria-label="Account" aria-haspopup="true"><span id="acImg">&#128100;</span></button><div class="acm hidden" id="acMenu"></div><button class="logo" id="logo"><i></i><span id="logoName"></span></button></div>
+  <nav><a class="nl" href="#how" data-home>How it works</a><a class="nl" href="#faq" data-home>Questions</a><a class="btn sm" href="#pick" data-home>Order a website</a><div class="lw"><button class="lbtn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false">🌐 <span id="langName">English</span> ▾</button><div class="lmenu hidden" id="langMenu" role="menu"></div></div></nav>
+</div></header>
+
+<main>
+<div id="v-home">
+  <div class="hero"><div class="wrap">
+    <div>
+      <h1>Your business, online. Ready in days.</h1>
+      <p class="ta">உங்கள் தொழிலுக்கு ஒரு அழகான வலைத்தளம்</p>
+      <p class="lead">We build simple, fast websites for shops, salons, restaurants, clinics and tuition centres. Customers find you on Google and contact you on WhatsApp.</p>
+      <div class="cta"><a class="btn sun" href="#pick">Pick your website</a><a class="btn line" href="#how">How it works</a></div>
+      <div class="facts"><div><b>3 to 7 days</b>to go live</div><div><b>See price first</b>no surprises</div><div><b>Phone friendly</b>every screen size</div></div>
+    </div>
+    <div class="stage">
+      <div class="phone"><div class="screen" id="screen"></div></div>
+      <div class="chips" id="chips"></div>
+    </div>
+  </div></div>
+
+  <section id="pick"><div class="wrap">
+    <h2>What is your business?</h2>
+    <p class="sub">Tap your industry. You will see website styles made for it, with prices.</p>
+    <div class="grid" id="indGrid"></div>
+  </div></section>
+
+  <section class="alt" id="how"><div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Four simple steps. You stay in control.</p>
+    <div class="grid steps">
+      <div class="step"><h3>Pick a style</h3><p>Choose your industry and a website style. Add any extra features.</p></div>
+      <div class="step"><h3>See the price</h3><p>The estimate updates as you choose. Tell us your budget.</p></div>
+      <div class="step"><h3>Send your order</h3><p>Send it on WhatsApp, email, Telegram or Instagram. It takes 2 minutes.</p></div>
+      <div class="step"><h3>Approve and go live</h3><p>We share the design. You approve, pay the balance, and it goes live.</p></div>
+    </div>
+  </div></section>
+
+  <section id="faq"><div class="wrap">
+    <h2>Common questions</h2><p class="sub">&nbsp;</p>
+    <details><summary>Do I pay to send an order?</summary><p>No. Sending an order and chatting with us on WhatsApp or Instagram is free. You pay only after you approve the design.</p></details>
+    <details><summary>What if I do not know my budget?</summary><p>Choose "I am not sure". We suggest the best option and you decide.</p></details>
+    <details><summary>Do I need to buy a domain and hosting?</summary><p>Yes, a yearly cost of about ₹3,000 to ₹8,000. We set it up for you, in your name.</p></details>
+    <details><summary>Can I get an app too?</summary><p>Yes. Choose "Install as app" and customers can add your website to their phone home screen.</p></details>
+  </div></section>
+
+  <section class="contact" id="contact"><div class="wrap">
+    <h2>Talk to us first?</h2>
+    <p class="sub">Message us anytime. It is free.</p>
+    <div class="links" id="links"></div>
+  </div></section>
+</div>
+
+<div id="v-ind" class="hidden"><section><div class="wrap">
+  <button class="back" data-go="home">← All industries</button>
+  <h2 id="indTitle"></h2><p class="sub">Choose the style that fits you. You can add features in the next step.</p>
+  <div class="grid" id="styleGrid"></div>
+</div></section></div>
+
+<div id="v-order" class="hidden"><section><div class="wrap">
+  <button class="back" id="backInd">← Back to styles</button>
+  <h2>Your order</h2><p class="sub" id="chosen"></p>
+  <div id="form">
+    <div><label>Extra features</label><div id="addons"></div></div>
+    <div class="est"><div class="hint">Estimated price</div><div class="price" id="est"></div><div class="hint">Domain and hosting are extra, about ₹3,000 to ₹8,000 per year.</div></div>
+    <div><label for="speed">How fast do you need it?</label><select id="speed"><option value="Within 24 hours (rush)">Within 24 hours (rush)</option><option value="2 to 3 days">2 to 3 days</option><option value="3 to 7 days" selected>3 to 7 days</option><option value="No hurry, 1 to 2 weeks">No hurry, 1 to 2 weeks</option></select><p class="hint">Rush delivery depends on the style. We confirm the exact time on your order.</p></div>
+    <div><label for="budget">Your budget</label><select id="budget"></select><p class="hint" id="budgetHint"></p></div>
+    <div><label for="fname">Your name</label><input type="text" id="fname" autocomplete="name"></div>
+    <div><label for="fbiz">Business name</label><input type="text" id="fbiz"></div>
+    <div><label for="fphone">Phone number</label><input type="tel" id="fphone" autocomplete="tel"></div>
+    <div><label for="fnote">Anything else? (optional)</label><textarea id="fnote" rows="3" placeholder="Colours, logo, websites you like"></textarea></div>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" type="button" id="goBtn">Continue</button>
+  </div>
+</div></section></div>
+
+<div id="v-done" class="hidden"><section><div class="wrap"><div class="box">
+  <h2>Your order is ready</h2>
+  <p class="sub">Send it to us on the app you like.</p>
+  <div class="sum" id="sum"></div>
+  <div class="chan" id="chan"></div>
+  <div class="sum" id="payBox" style="display:none"></div>
+  <p class="hint" id="chanHint"></p>
+  <button class="btn line" data-go="home">Start a new order</button>
+</div></div></section></div>
+<div class="lg hidden" id="lg" role="dialog" aria-modal="true" aria-label="Sign in"><div class="lgb" id="lgb"></div></div>
+<div id="v-orders" class="hidden"><section><div class="wrap"><div class="box">
+  <h2>My orders</h2>
+  <p class="sub" id="oSub">Track your payments and delivery here.</p>
+  <div id="olist" style="display:grid;gap:14px"></div>
+  <button class="btn line" data-go="home">Back to home</button>
+</div></div></section></div>
+</main>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">Chat</a>
+<footer>© <span id="yr"></span> <span id="coName"></span>. Made in Tamil Nadu.</footer>
+<button class="cfab" id="chatFab" aria-label="Chat">💬</button>
+<div class="chat hidden" id="chat" role="dialog" aria-label="Chat"><div class="ch"><b>Chat with us</b><button id="chatX" aria-label="Close">✕</button></div><div class="cm" id="chatMsgs" aria-live="polite"></div><div class="cf" id="chatForm"><input type="text" id="chatIn" placeholder="Type your message" autocomplete="off"><button class="btn sm" type="button" id="chatSend">Send</button></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script>
+/* ===== EDIT ONLY THIS PART ===== */
+const CO = { name:"WebNaadu", whatsapp:"919629554412", phone:"919629554412", email:"pragadee00741@gmail.com", telegram:"", instagram:"pragadeezz_xng", facebook:"" };
+/* Payment: fill upi and name when ready. Put your QR image file name in qr (example "upi-qr.png"). */
+/* Firebase: paste your project keys here (Firebase console > Project settings > Your apps > Web). */
+const FB = { apiKey:"", authDomain:"", projectId:"", appId:"" };
+const PAY = { upi:"", payee:"", qr:"", advancePct:50 };
+const ADDONS = [
+  {id:"wa",n:"WhatsApp order button",p:500},{id:"book",n:"Booking or enquiry form",p:1500},{id:"gal",n:"Photo gallery",p:800},
+  {id:"map",n:"Google Maps location",p:300},{id:"pwa",n:"Install as app (PWA)",p:3000},{id:"page",n:"Extra page",p:700}
+];
+const INDUSTRIES = [
+ {n:"Restaurant / Tiffin",i:"🍽️",t:"Menu and orders",styles:[
+  {n:"Menu + WhatsApp order",d:"Menu with prices. Customers order on WhatsApp.",f:["Menu with categories","Open or closed status","WhatsApp order cart"],p:6000},
+  {n:"Full restaurant site",d:"Menu, gallery, table booking and reviews.",f:["5 pages","Photo gallery","Table booking form"],p:12000}]},
+ {n:"Salon / Beauty",i:"💇",t:"Services and booking",styles:[
+  {n:"Service list + booking",d:"Services, prices and an appointment form.",f:["Service price list","Booking form","Instagram link"],p:6000},
+  {n:"Premium salon site",d:"Gallery, offers, team and online booking.",f:["5 pages","Before and after gallery","Offers section"],p:13000}]},
+ {n:"Shop / Store",i:"🛍️",t:"Products and orders",styles:[
+  {n:"Product catalogue",d:"Show products. Customers enquire on WhatsApp.",f:["Product grid","Search and filter","WhatsApp enquiry"],p:7000},
+  {n:"Online store",d:"Cart and online payment.",f:["Cart and checkout","Payment gateway","Order dashboard"],p:25000}]},
+ {n:"Tuition / Coaching",i:"📚",t:"Courses and enquiries",styles:[
+  {n:"Class details page",d:"Courses, timings, fees and an enquiry form.",f:["Course list","Batch timings","Enquiry form"],p:5000},
+  {n:"Academy site",d:"Results, faculty, gallery and demo class booking.",f:["6 pages","Toppers section","Demo class booking"],p:12000}]},
+ {n:"Clinic / Doctor",i:"🩺",t:"Info and appointments",styles:[
+  {n:"Clinic info page",d:"Doctor profile, timings and appointment request.",f:["Doctor profile","Timings and map","Appointment form"],p:6000},
+  {n:"Multi-service clinic",d:"Services, team and online booking.",f:["6 pages","Service pages","Online booking"],p:14000}]},
+ {n:"Wedding / Event",i:"💍",t:"Invitation and RSVP",styles:[
+  {n:"Invitation page",d:"Date, venue, map and RSVP.",f:["Countdown","Venue map","RSVP on WhatsApp"],p:3000},
+  {n:"Wedding story site",d:"Photos, schedule and guest wishes.",f:["Photo gallery","Event schedule","Wishes form"],p:6000}]},
+ {n:"Freelancer / Portfolio",i:"🎨",t:"Show your work",styles:[
+  {n:"One page portfolio",d:"Your work, skills and contact.",f:["Work gallery","About and skills","Contact buttons"],p:4000},
+  {n:"Full portfolio",d:"Case studies and testimonials.",f:["5 pages","Case studies","Testimonials"],p:9000}]},
+ {n:"Gym / Fitness",i:"🏋️",t:"Plans and joining",styles:[
+  {n:"Gym info page",d:"Plans, timings, trainers and join on WhatsApp.",f:["Membership plans","Trainer profiles","Join on WhatsApp"],p:5500},
+  {n:"Fitness studio site",d:"Class schedule, gallery and online booking.",f:["5 pages","Class schedule","Booking form"],p:11000}]},
+ {n:"Photography / Studio",i:"📷",t:"Show your best shots",styles:[
+  {n:"Photo portfolio",d:"Gallery, packages and enquiry button.",f:["Photo gallery","Packages","Enquiry on WhatsApp"],p:5000},
+  {n:"Studio website",d:"Albums, pricing, testimonials and booking.",f:["5 pages","Client albums","Booking form"],p:10000}]},
+ {n:"Real estate",i:"🏠",t:"Listings and enquiries",styles:[
+  {n:"Property showcase",d:"Property photos, details and enquiry.",f:["Property cards","Photo gallery","Enquiry on WhatsApp"],p:7000},
+  {n:"Agent website",d:"Many listings, search and agent profile.",f:["Listings with filter","Agent profile","Enquiry form"],p:15000}]},
+ {n:"Travel / Cab",i:"🚕",t:"Trips and bookings",styles:[
+  {n:"Cab booking page",d:"Routes, rates, fleet and call to book.",f:["Rate card","Vehicle list","Book on WhatsApp"],p:5000},
+  {n:"Tours and travel site",d:"Packages, itinerary and enquiry.",f:["Tour packages","Photo gallery","Enquiry form"],p:12000}]},
+ {n:"Repair / Home service",i:"🔧",t:"Services and bookings",styles:[
+  {n:"Service page",d:"Services, areas covered and call button.",f:["Service list","Areas covered","Call and WhatsApp"],p:4500},
+  {n:"Service booking site",d:"Service pages, pricing and online booking.",f:["5 pages","Price list","Booking form"],p:10000}]},
+ {n:"Something else",i:"✨",t:"Tell us your idea",styles:[
+  {n:"Simple business page",d:"One clean page with your details.",f:["About and services","Contact buttons","Google Maps"],p:4500},
+  {n:"Custom website",d:"Tell us your idea. We quote after a call.",f:["Custom pages","Custom design","We discuss first"],p:15000}]}
+];
+const BUDGETS = [
+ {l:"I am not sure. Suggest me.",v:"Not sure, please suggest"},{l:"Under ₹5,000",v:"Under ₹5,000",max:5000},
+ {l:"₹5,000 to ₹10,000",v:"₹5,000 to ₹10,000",max:10000},{l:"₹10,000 to ₹20,000",v:"₹10,000 to ₹20,000",max:20000},{l:"₹20,000 and above",v:"₹20,000 and above",max:Infinity}
+];
+const DEMOS = [
+ {k:"Tiffin",c:"#c2410c",s:"Amma Tiffin Centre",t:"Hot tiffin every morning",r:[["Idli (2)","₹30"],["Masala Dosa","₹70"],["Filter Coffee","₹20"]],b:"Order on WhatsApp"},
+ {k:"Salon",c:"#9d174d",s:"Glow Beauty Parlour",t:"Book your slot today",r:[["Haircut","₹200"],["Facial","₹600"],["Bridal makeup","₹5,000"]],b:"Book appointment"},
+ {k:"Tuition",c:"#1d4ed8",s:"Bright Minds Academy",t:"Classes 8 to 12",r:[["Maths","5 PM"],["Science","6 PM"],["English","7 PM"]],b:"Book a demo class"}
+];
+// AI chat: paste your Cloudflare Worker URL here (see ai-worker.js). Leave empty to use the simple built-in chat.
+const AI = { endpoint: "" };
+// Free email delivery: make a free key at web3forms.com (or use a formspree.io endpoint) and paste it here.
+const FORM = { endpoint: "https://api.web3forms.com/submit", accessKey: "" };
+/* ===== END EDIT ZONE ===== */
+
+const $ = id => document.getElementById(id);
+const inr = n => '₹' + n.toLocaleString('en-IN');
+const S = {ind:null, style:null, msg:""};
+const views = ['home','ind','order','done','orders'];
+function show(v, anchor){
+  views.forEach(x => $('v-'+x).classList.toggle('hidden', x !== v));
+  if (anchor && $(anchor)) $(anchor).scrollIntoView(); else window.scrollTo(0,0);
+}
+$('logoName').textContent = CO.name; $('coName').textContent = CO.name; $('yr').textContent = new Date().getFullYear();
+$('logo').onclick = () => show('home');
+document.querySelectorAll('[data-go]').forEach(b => b.onclick = () => show(b.dataset.go));
+document.querySelectorAll('[data-home]').forEach(a => a.addEventListener('click', () => show('home')));
+$('fab').href = `https://wa.me/${CO.whatsapp}?text=${encodeURIComponent('Hi, I want a website for my business.')}`;
+$('links').innerHTML = `<a href="https://wa.me/${CO.whatsapp}" target="_blank" rel="noopener">WhatsApp</a><a href="https://ig.me/m/${CO.instagram}" target="_blank" rel="noopener">Instagram</a><a href="mailto:${CO.email}">Email</a><a href="tel:+${CO.phone}">Call</a>`;
+
+/* phone demo */
+let di = 0, timer;
+function drawDemo(i){
+  const d = DEMOS[i];
+  $('screen').innerHTML = `<div class="s-top" style="background:${d.c}"><small>${d.s}</small><h4>${d.t}</h4></div><div class="s-body">${d.r.map(r=>`<div class="s-row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')}</div><div class="s-btn" style="background:${d.c}">${d.b}</div>`;
+  [...$('chips').children].forEach((c,j) => c.setAttribute('aria-pressed', j === i));
+}
+DEMOS.forEach((d,i) => { const c = document.createElement('button'); c.className='chip'; c.textContent=d.k; c.onclick=()=>{di=i;drawDemo(i);clearInterval(timer);}; $('chips').appendChild(c); });
+drawDemo(0);
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(()=>{ $('screen').classList.add('fade'); setTimeout(()=>{ di=(di+1)%DEMOS.length; drawDemo(di); $('screen').classList.remove('fade'); },250); }, 3500);
+
+/* industries */
+INDUSTRIES.forEach(ind => {
+  const b = document.createElement('button'); b.className = 'ind';
+  b.innerHTML = `<span>${ind.i}</span><b>${ind.n}</b><small>${ind.t}</small>`;
+  b.onclick = () => openIndustry(ind); $('indGrid').appendChild(b);
+});
+function openIndustry(ind){
+  S.ind = ind; $('indTitle').innerHTML = '<span>'+ind.n+'</span> <span>websites</span>'; $('styleGrid').innerHTML = '';
+  ind.styles.forEach(st => {
+    const c = document.createElement('div'); c.className = 'card';
+    c.innerHTML = `<h3>${st.n}</h3><p class="hint">${st.d}</p><ul>${st.f.map(x=>`<li>${x}</li>`).join('')}</ul><div class="price"><span>From</span> ${inr(st.p)}</div>`;
+    const b = document.createElement('button'); b.className = 'btn'; b.textContent = 'Choose this'; b.onclick = () => needLogin(() => openOrder(st));
+    c.appendChild(b); $('styleGrid').appendChild(c);
+  });
+  show('ind');
+}
+$('backInd').onclick = () => show('ind');
+
+function openOrder(st){
+  S.style = st; $('chosen').innerHTML = `<span>${S.ind.n}</span>: ${st.n}`; $('addons').innerHTML = '';
+  ADDONS.forEach(a => {
+    const l = document.createElement('label'); l.className = 'chk';
+    l.innerHTML = `<input type="checkbox" value="${a.id}"> ${a.n} <em>+${inr(a.p)}</em>`;
+    l.querySelector('input').onchange = calc; $('addons').appendChild(l);
+  });
+  $('budget').innerHTML = ''; BUDGETS.forEach(b => $('budget').add(new Option(b.l, b.v)));
+  calc(); show('order');
+}
+const picked = () => ADDONS.filter(a => document.querySelector(`#addons input[value="${a.id}"]`).checked);
+const total = () => S.style.p + picked().reduce((s,a) => s + a.p, 0);
+function calc(){ $('est').textContent = inr(total()); budgetHint(); }
+function budgetHint(){
+  const b = BUDGETS.find(x => x.v === $('budget').value), t = total();
+  $('budgetHint').textContent = !b.max ? 'No problem. We will suggest the best option for you.'
+    : b.max >= t ? 'Your budget covers this estimate.' : 'This estimate is above your budget. Remove some features, or we will suggest a smaller option.';
+}
+$('budget').onchange = budgetHint;
+
+function submitOrder(){
+  const name = $('fname').value.trim(), biz = $('fbiz').value.trim(), ph = $('fphone').value.trim();
+  if (!name || !biz || ph.replace(/\D/g,'').length < 10){ $('err').textContent = 'Please fill your name, business name and a valid 10 digit phone number.'; return; }
+  $('err').textContent = '';
+  if (fbOn && !fbUser){ needLogin(submitOrder); return; }
+  const note = $('fnote').value.trim();
+  S.msg = `New website order\nIndustry: ${S.ind.n}\nStyle: ${S.style.n}\nExtras: ${picked().map(a=>a.n).join(', ') || 'None'}\nEstimate: ${inr(total())}\nDelivery: ${$('speed').value}\nBudget: ${$('budget').value}\nName: ${name}\nBusiness: ${biz}\nPhone: ${ph}` + (note ? `\nNotes: ${note}` : '') + `\nCustomer language: ${ENN[LANGS.indexOf(lang)]}`;
+  saveOrder(name, biz, ph, note);
+  $('sum').textContent = S.msg; buildChannels(); show('done');
+  sendToOwner('Website order: '+S.ind.n, S.msg, false).then(ok => { if (ok) toast(t('Order sent. We will reply soon.')); });
+}
+$('goBtn').onclick = submitOrder;
+
+function copy(t){ try{ navigator.clipboard.writeText(t); }catch(e){} }
+function toast(t){ const el = $('toast'); el.textContent = t; el.style.display = 'block'; setTimeout(()=>el.style.display='none', 4000); }
+function buildChannels(){
+  const m = encodeURIComponent(S.msg), box = $('chan'); box.innerHTML = '';
+  const add = (label, fn, cls) => { const b = document.createElement('button'); b.className = 'btn ' + (cls||''); b.textContent = label; b.onclick = fn; box.appendChild(b); };
+  add('WhatsApp', () => window.open(`https://wa.me/${CO.whatsapp}?text=${m}`, '_blank'));
+  add('Email', () => location.href = `mailto:${CO.email}?subject=${encodeURIComponent('Website order: ' + S.ind.n)}&body=${m}`, 'sun');
+  if (CO.telegram) add('Telegram', () => window.open(`https://t.me/${CO.telegram}?text=${m}`, '_blank'), 'sun');
+  add('Instagram', () => { copy(S.msg); toast('Details copied. Paste them in the chat.'); window.open(`https://ig.me/m/${CO.instagram}`, '_blank'); }, 'line');
+  if (CO.facebook) add('Facebook', () => { copy(S.msg); toast('Details copied. Paste them in the chat.'); window.open(`https://m.me/${CO.facebook}`, '_blank'); }, 'line');
+  add('Call us', () => { copy(S.msg); toast('Details copied. Share them when we pick up.'); location.href = `tel:+${CO.phone}`; }, 'line');
+  const pb = $('payBox');
+  if (PAY.upi || PAY.qr) {
+    const adv = Math.round(total() * PAY.advancePct / 100);
+    pb.style.display = 'block';
+    pb.innerHTML = '';
+    const h = document.createElement('div'); h.textContent = `Advance to start: ${inr(adv)} (${PAY.advancePct}%). The rest after you approve the design.`; pb.appendChild(h);
+    if (PAY.upi) { const u = document.createElement('div'); u.textContent = `UPI ID: ${PAY.upi}${PAY.payee ? ' (' + PAY.payee + ')' : ''}  |  Phone: +${CO.phone}`; pb.appendChild(u); }
+    if (PAY.qr) { const im = document.createElement('img'); im.src = PAY.qr; im.alt = 'UPI QR code'; im.style.cssText = 'max-width:200px;margin-top:8px;display:block'; pb.appendChild(im); }
+    const n = document.createElement('div'); n.textContent = 'After paying, send us the payment screenshot on WhatsApp.'; pb.appendChild(n);
+  } else pb.style.display = 'none';
+  $('chanHint').textContent = 'WhatsApp and Email fill your details in automatically. Instagram and Call copy them so you can paste or tell us.';
+}
+
+/* ===== LANGUAGES ===== */
+const T = {"How it works":["எப்படி வேலை செய்கிறது","यह कैसे काम करता है","എങ്ങനെ പ്രവർത്തിക്കുന്നു","ఇది ఎలా పనిచేస్తుంది","ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ","كيف يعمل"],"Order a website":["வலைத்தளம் ஆர்டர் செய்","वेबसाइट ऑर्डर करें","വെബ്സൈറ്റ് ഓർഡർ ചെയ്യൂ","వెబ్‌సైట్ ఆర్డర్ చేయండి","ವೆಬ್‌ಸೈಟ್ ಆರ್ಡರ್ ಮಾಡಿ","اطلب موقعك"],"Your business, online. Ready in days.":["உங்கள் தொழில், ஆன்லைனில். சில நாட்களில் தயார்.","आपका बिज़नेस, ऑनलाइन। कुछ ही दिनों में तैयार।","നിങ്ങളുടെ ബിസിനസ്, ഓൺലൈനിൽ. ദിവസങ്ങൾക്കുള്ളിൽ റെഡി.","మీ వ్యాపారం, ఆన్‌లైన్‌లో. కొద్ది రోజుల్లో సిద్ధం.","ನಿಮ್ಮ ವ್ಯಾಪಾರ, ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ. ಕೆಲವೇ ದಿನಗಳಲ್ಲಿ ಸಿದ್ಧ.","نشاطك على الإنترنت. جاهز خلال أيام."],"We build simple, fast websites for shops, salons, restaurants, clinics and tuition centres. Customers find you on Google and contact you on WhatsApp.":["கடைகள், சலூன்கள், உணவகங்கள், கிளினிக்குகள், டியூஷன் மையங்களுக்கு எளிய, வேகமான வலைத்தளங்களை உருவாக்குகிறோம். வாடிக்கையாளர்கள் கூகுளில் உங்களைக் கண்டு வாட்ஸ்அப்பில் தொடர்பு கொள்வார்கள்.","हम दुकानों, सैलून, रेस्टोरेंट, क्लिनिक और ट्यूशन सेंटर के लिए सरल, तेज़ वेबसाइट बनाते हैं। ग्राहक आपको गूगल पर ढूँढते हैं और व्हाट्सऐप पर संपर्क करते हैं।","കടകൾ, സലൂണുകൾ, റസ്റ്റോറന്റുകൾ, ക്ലിനിക്കുകൾ, ട്യൂഷൻ സെന്ററുകൾ എന്നിവയ്ക്ക് ലളിതവും വേഗമേറിയതുമായ വെബ്സൈറ്റുകൾ ഞങ്ങൾ നിർമ്മിക്കുന്നു. ഉപഭോക്താക്കൾ ഗൂഗിളിൽ നിങ്ങളെ കണ്ടെത്തി വാട്സ്ആപ്പിൽ ബന്ധപ്പെടും.","దుకాణాలు, సెలూన్లు, రెస్టారెంట్లు, క్లినిక్‌లు, ట్యూషన్ సెంటర్లకు సులభమైన, వేగవంతమైన వెబ్‌సైట్లు తయారు చేస్తాం. కస్టమర్లు గూగుల్‌లో మిమ్మల్ని కనుగొని వాట్సాప్‌లో సంప్రదిస్తారు.","ಅಂಗಡಿ, ಸಲೂನ್, ರೆಸ್ಟೋರೆಂಟ್, ಕ್ಲಿನಿಕ್, ಟ್ಯೂಷನ್ ಕೇಂದ್ರಗಳಿಗೆ ಸರಳ, ವೇಗದ ವೆಬ್‌ಸೈಟ್ ನಿರ್ಮಿಸುತ್ತೇವೆ. ಗ್ರಾಹಕರು ಗೂಗಲ್‌ನಲ್ಲಿ ನಿಮ್ಮನ್ನು ಹುಡುಕಿ ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ಸಂಪರ್ಕಿಸುತ್ತಾರೆ.","نصمم مواقع بسيطة وسريعة للمتاجر والصالونات والمطاعم والعيادات ومراكز الدروس. يجدك العملاء على جوجل ويتواصلون معك عبر واتساب."],"Pick your website":["உங்கள் வலைத்தளத்தைத் தேர்வு செய்","अपनी वेबसाइट चुनें","വെബ്സൈറ്റ് തിരഞ്ഞെടുക്കൂ","మీ వెబ్‌సైట్ ఎంచుకోండి","ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಆಯ್ಕೆಮಾಡಿ","اختر موقعك"],"3 to 7 days":["3 முதல் 7 நாட்கள்","3 से 7 दिन","3 മുതൽ 7 ദിവസം","3 నుండి 7 రోజులు","3 ರಿಂದ 7 ದಿನ","من 3 إلى 7 أيام"],"to go live":["இணையத்தில் வர","लाइव होने में","ലൈവ് ആകാൻ","లైవ్ అవ్వడానికి","ಲೈವ್ ಆಗಲು","للإطلاق"],"See price first":["முதலில் விலை பாருங்கள்","पहले कीमत देखें","ആദ്യം വില കാണൂ","ముందు ధర చూడండి","ಮೊದಲು ಬೆಲೆ ನೋಡಿ","شاهد السعر أولاً"],"no surprises":["மறைமுக செலவு இல்லை","कोई छुपा खर्च नहीं","അപ്രതീക്ഷിത ചെലവില്ല","దాచిన ఖర్చులు లేవు","ಗುಪ್ತ ಖರ್ಚು ಇಲ್ಲ","بدون مفاجآت"],"Phone friendly":["போனுக்கு ஏற்றது","फोन पर आसान","ഫോണിൽ എളുപ്പം","ఫోన్‌లో సులభం","ಫೋನ್‌ನಲ್ಲಿ ಸುಲಭ","مناسب للجوال"],"every screen size":["எல்லா திரையிலும்","हर स्क्रीन साइज़ पर","എല്ലാ സ്ക്രീനിലും","ప్రతి స్క్రీన్‌లో","ಎಲ್ಲಾ ಸ್ಕ್ರೀನ್‌ನಲ್ಲಿ","على كل الشاشات"],"What is your business?":["உங்கள் தொழில் என்ன?","आपका बिज़नेस क्या है?","നിങ്ങളുടെ ബിസിനസ് എന്താണ്?","మీ వ్యాపారం ఏమిటి?","ನಿಮ್ಮ ವ್ಯಾಪಾರ ಯಾವುದು?","ما نوع نشاطك؟"],"Tap your industry. You will see website styles made for it, with prices.":["உங்கள் துறையைத் தேர்வு செய்யுங்கள். அதற்கான வடிவமைப்புகளை விலையுடன் காணலாம்.","अपना क्षेत्र चुनें। उसके लिए वेबसाइट स्टाइल कीमत के साथ दिखेंगे।","നിങ്ങളുടെ മേഖല തിരഞ്ഞെടുക്കൂ. വിലയോടെ വെബ്സൈറ്റ് ശൈലികൾ കാണാം.","మీ రంగాన్ని ఎంచుకోండి. దానికి తగిన వెబ్‌సైట్ శైలులు ధరలతో కనిపిస్తాయి.","ನಿಮ್ಮ ಕ್ಷೇತ್ರ ಆಯ್ಕೆಮಾಡಿ. ಬೆಲೆಯೊಂದಿಗೆ ವೆಬ್‌ಸೈಟ್ ಶೈಲಿಗಳು ಕಾಣಿಸುತ್ತವೆ.","اختر مجالك لترى أنماط المواقع المناسبة مع الأسعار."],"Four simple steps. You stay in control.":["நான்கு எளிய படிகள். கட்டுப்பாடு உங்களிடமே.","चार आसान कदम। नियंत्रण आपके हाथ में।","നാല് ലളിത ഘട്ടങ്ങൾ. നിയന്ത്രണം നിങ്ങളുടെ കൈയിൽ.","నాలుగు సులభ దశలు. నియంత్రణ మీదే.","ನಾಲ್ಕು ಸರಳ ಹಂತಗಳು. ನಿಯಂತ್ರಣ ನಿಮ್ಮದೇ.","أربع خطوات بسيطة. القرار بيدك."],"Pick a style":["வடிவமைப்பைத் தேர்வு செய்","स्टाइल चुनें","ശൈലി തിരഞ്ഞെടുക്കൂ","శైలిని ఎంచుకోండి","ಶೈಲಿ ಆಯ್ಕೆಮಾಡಿ","اختر نمطًا"],"See the price":["விலையைப் பார்","कीमत देखें","വില കാണൂ","ధర చూడండి","ಬೆಲೆ ನೋಡಿ","شاهد السعر"],"Send your order":["ஆர்டரை அனுப்பு","ऑर्डर भेजें","ഓർഡർ അയയ്ക്കൂ","ఆర్డర్ పంపండి","ಆರ್ಡರ್ ಕಳುಹಿಸಿ","أرسل طلبك"],"Approve and go live":["ஒப்புதல் அளித்து இணையத்தில் வா","मंज़ूरी दें और लाइव करें","അംഗീകരിച്ച് ലൈവ് ആക്കൂ","ఆమోదించి లైవ్ చేయండి","ಒಪ್ಪಿ ಲೈವ್ ಮಾಡಿ","وافق وانطلق"],"Talk to us first?":["முதலில் எங்களிடம் பேச வேண்டுமா?","पहले बात करना चाहते हैं?","ആദ്യം സംസാരിക്കണോ?","ముందు మాట్లాడాలా?","ಮೊದಲು ಮಾತನಾಡಬೇಕೇ?","تريد التحدث إلينا أولاً؟"],"Message us anytime. It is free.":["எப்போது வேண்டுமானாலும் மெசேஜ் செய்யுங்கள். இலவசம்.","कभी भी मैसेज करें। यह मुफ़्त है।","എപ്പോഴും മെസ്സേജ് ചെയ്യൂ. സൗജന്യമാണ്.","ఎప్పుడైనా మెసేజ్ చేయండి. ఉచితం.","ಯಾವಾಗ ಬೇಕಾದರೂ ಮೆಸೇಜ್ ಮಾಡಿ. ಉಚಿತ.","راسلنا في أي وقت. مجاني."],"Restaurant / Tiffin":["உணவகம் / டிபன்","रेस्टोरेंट / टिफ़िन","റസ്റ്റോറന്റ് / ടിഫിൻ","రెస్టారెంట్ / టిఫిన్","ರೆಸ್ಟೋರೆಂಟ್ / ಟಿಫಿನ್","مطعم / وجبات"],"Salon / Beauty":["சலூன் / அழகு","सैलून / ब्यूटी","സലൂൺ / ബ്യൂട്ടി","సెలూన్ / బ్యూటీ","ಸಲೂನ್ / ಬ್ಯೂಟಿ","صالون / تجميل"],"Shop / Store":["கடை","दुकान / स्टोर","കട / സ്റ്റോർ","దుకాణం / స్టోర్","ಅಂಗಡಿ / ಸ್ಟೋರ್","متجر"],"Tuition / Coaching":["டியூஷன் / பயிற்சி","ट्यूशन / कोचिंग","ട്യൂഷൻ / കോച്ചിംഗ്","ట్యూషన్ / కోచింగ్","ಟ್ಯೂಷನ್ / ಕೋಚಿಂಗ್","دروس / تدريب"],"Clinic / Doctor":["கிளினிக் / மருத்துவர்","क्लिनिक / डॉक्टर","ക്ലിനിക് / ഡോക്ടർ","క్లినిక్ / డాక్టర్","ಕ್ಲಿನಿಕ್ / ವೈದ್ಯರು","عيادة / طبيب"],"Wedding / Event":["திருமணம் / நிகழ்வு","शादी / इवेंट","വിവാഹം / ഇവന്റ്","పెళ్లి / ఈవెంట్","ಮದುವೆ / ಕಾರ್ಯಕ್ರಮ","زفاف / مناسبة"],"Freelancer / Portfolio":["ஃப்ரீலான்சர் / போர்ட்ஃபோலியோ","फ्रीलांसर / पोर्टफोलियो","ഫ്രീലാൻസർ / പോർട്ട്ഫോളിയോ","ఫ్రీలాన్సర్ / పోర్ట్‌ఫోలియో","ಫ್ರೀಲಾನ್ಸರ್ / ಪೋರ್ಟ್‌ಫೋಲಿಯೊ","مستقل / معرض أعمال"],"Something else":["வேறு ஏதாவது","कुछ और","മറ്റെന്തെങ്കിലും","ఇంకేదైనా","ಬೇರೇನಾದರೂ","شيء آخر"],"← All industries":["← எல்லா துறைகளும்","← सभी क्षेत्र","← എല്ലാ മേഖലകളും","← అన్ని రంగాలు","← ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳು","→ كل المجالات"],"websites":["வலைத்தளங்கள்","वेबसाइट","വെബ്സൈറ്റുകൾ","వెబ్‌సైట్లు","ವೆಬ್‌ಸೈಟ್‌ಗಳು","مواقع"],"Choose the style that fits you. You can add features in the next step.":["உங்களுக்குப் பொருத்தமான வடிவமைப்பைத் தேர்வு செய்யுங்கள். அடுத்த படியில் வசதிகளைச் சேர்க்கலாம்.","अपने लिए सही स्टाइल चुनें। अगले चरण में फ़ीचर जोड़ सकते हैं।","നിങ്ങൾക്ക് ചേരുന്ന ശൈലി തിരഞ്ഞെടുക്കൂ. അടുത്ത ഘട്ടത്തിൽ ഫീച്ചറുകൾ ചേർക്കാം.","మీకు సరిపోయే శైలిని ఎంచుకోండి. తర్వాతి దశలో ఫీచర్లు జోడించవచ్చు.","ನಿಮಗೆ ಸರಿಹೊಂದುವ ಶೈಲಿ ಆಯ್ಕೆಮಾಡಿ. ಮುಂದಿನ ಹಂತದಲ್ಲಿ ಫೀಚರ್ ಸೇರಿಸಬಹುದು.","اختر النمط المناسب. يمكنك إضافة ميزات في الخطوة التالية."],"From":["தொடக்கம்","शुरू","തുടക്കം","ప్రారంభం","ಆರಂಭ","ابتداءً من"],"Choose this":["இதைத் தேர்வு செய்","यह चुनें","ഇത് തിരഞ്ഞെടുക്കൂ","ఇది ఎంచుకోండి","ಇದನ್ನು ಆಯ್ಕೆಮಾಡಿ","اختر هذا"],"← Back to styles":["← வடிவமைப்புகளுக்குத் திரும்பு","← स्टाइल पर वापस","← ശൈലികളിലേക്ക് മടങ്ങുക","← శైలులకు వెనక్కి","← ಶೈಲಿಗಳಿಗೆ ಹಿಂದೆ","→ العودة للأنماط"],"Your order":["உங்கள் ஆர்டர்","आपका ऑर्डर","നിങ്ങളുടെ ഓർഡർ","మీ ఆర్డర్","ನಿಮ್ಮ ಆರ್ಡರ್","طلبك"],"Extra features":["கூடுதல் வசதிகள்","अतिरिक्त फ़ीचर","അധിക ഫീച്ചറുകൾ","అదనపు ఫీచర్లు","ಹೆಚ್ಚುವರಿ ಫೀಚರ್‌ಗಳು","ميزات إضافية"],"Estimated price":["மதிப்பிடப்பட்ட விலை","अनुमानित कीमत","കണക്കാക്കിയ വില","అంచనా ధర","ಅಂದಾಜು ಬೆಲೆ","السعر التقديري"],"Domain and hosting are extra, about ₹3,000 to ₹8,000 per year.":["டொமைன், ஹோஸ்டிங் தனி. ஆண்டுக்கு சுமார் ₹3,000 முதல் ₹8,000.","डोमेन और होस्टिंग अलग, लगभग ₹3,000 से ₹8,000 प्रति वर्ष।","ഡൊമെയ്‌നും ഹോസ്റ്റിംഗും പ്രത്യേകം, വർഷം ഏകദേശം ₹3,000 മുതൽ ₹8,000.","డొమైన్, హోస్టింగ్ అదనం, సంవత్సరానికి సుమారు ₹3,000 నుండి ₹8,000.","ಡೊಮೈನ್, ಹೋಸ್ಟಿಂಗ್ ಬೇರೆ, ವರ್ಷಕ್ಕೆ ಸುಮಾರು ₹3,000 ರಿಂದ ₹8,000.","النطاق والاستضافة منفصلان، حوالي 3,000 إلى 8,000 روبية سنويًا."],"Your budget":["உங்கள் பட்ஜெட்","आपका बजट","നിങ്ങളുടെ ബജറ്റ്","మీ బడ్జెట్","ನಿಮ್ಮ ಬಜೆಟ್","ميزانيتك"],"I am not sure. Suggest me.":["தெரியவில்லை. பரிந்துரை செய்யுங்கள்.","पता नहीं। आप सुझाएँ।","അറിയില്ല. നിർദ്ദേശിക്കൂ.","తెలియదు. మీరే సూచించండి.","ಗೊತ್ತಿಲ್ಲ. ನೀವೇ ಸೂಚಿಸಿ.","لست متأكدًا. اقترحوا علي."],"No problem. We will suggest the best option for you.":["பரவாயில்லை. சிறந்த வழியை நாங்கள் பரிந்துரைப்போம்.","कोई बात नहीं। हम सबसे अच्छा विकल्प सुझाएँगे।","കുഴപ്പമില്ല. മികച്ച ഓപ്ഷൻ ഞങ്ങൾ നിർദ്ദേശിക്കാം.","పర్వాలేదు. ఉత్తమ ఎంపికను మేము సూచిస్తాం.","ಪರವಾಗಿಲ್ಲ. ಉತ್ತಮ ಆಯ್ಕೆಯನ್ನು ನಾವು ಸೂಚಿಸುತ್ತೇವೆ.","لا مشكلة. سنقترح لك أفضل خيار."],"Your budget covers this estimate.":["உங்கள் பட்ஜெட்டில் இது அடங்கும்.","आपका बजट इस अनुमान के लिए काफ़ी है।","നിങ്ങളുടെ ബജറ്റിൽ ഇത് ഉൾപ്പെടും.","మీ బడ్జెట్‌లో ఇది సరిపోతుంది.","ನಿಮ್ಮ ಬಜೆಟ್‌ನಲ್ಲಿ ಇದು ಸಾಕು.","ميزانيتك تغطي هذا التقدير."],"This estimate is above your budget. Remove some features, or we will suggest a smaller option.":["இந்த மதிப்பீடு உங்கள் பட்ஜெட்டை விட அதிகம். சில வசதிகளை நீக்குங்கள் அல்லது சிறிய வழியை பரிந்துரைப்போம்.","यह अनुमान आपके बजट से ऊपर है। कुछ फ़ीचर हटाएँ या हम छोटा विकल्प सुझाएँगे।","ഈ കണക്ക് ബജറ്റിനേക്കാൾ കൂടുതലാണ്. ചില ഫീച്ചറുകൾ ഒഴിവാക്കൂ, അല്ലെങ്കിൽ ചെറിയ ഓപ്ഷൻ നിർദ്ദേശിക്കാം.","ఈ అంచనా మీ బడ్జెట్ కంటే ఎక్కువ. కొన్ని ఫీచర్లు తొలగించండి లేదా చిన్న ఎంపిక సూచిస్తాం.","ಈ ಅಂದಾಜು ನಿಮ್ಮ ಬಜೆಟ್‌ಗಿಂತ ಹೆಚ್ಚು. ಕೆಲವು ಫೀಚರ್ ತೆಗೆಯಿರಿ ಅಥವಾ ಚಿಕ್ಕ ಆಯ್ಕೆ ಸೂಚಿಸುತ್ತೇವೆ.","هذا التقدير أعلى من ميزانيتك. احذف بعض الميزات أو سنقترح خيارًا أصغر."],"Your name":["உங்கள் பெயர்","आपका नाम","നിങ്ങളുടെ പേര്","మీ పేరు","ನಿಮ್ಮ ಹೆಸರು","اسمك"],"Business name":["தொழில் பெயர்","बिज़नेस का नाम","ബിസിനസ് പേര്","వ్యాపారం పేరు","ವ್ಯಾಪಾರದ ಹೆಸರು","اسم النشاط"],"Phone number":["தொலைபேசி எண்","फ़ोन नंबर","ഫോൺ നമ്പർ","ఫోన్ నంబర్","ಫೋನ್ ಸಂಖ್ಯೆ","رقم الهاتف"],"Anything else? (optional)":["வேறு ஏதாவது? (விருப்பம்)","और कुछ? (वैकल्पिक)","മറ്റെന്തെങ്കിലും? (ഓപ്ഷണൽ)","ఇంకేమైనా? (ఐచ్ఛికం)","ಇನ್ನೇನಾದರೂ? (ಐಚ್ಛಿಕ)","أي شيء آخر؟ (اختياري)"],"Colours, logo, websites you like":["நிறங்கள், லோகோ, பிடித்த வலைத்தளங்கள்","रंग, लोगो, पसंदीदा वेबसाइट","നിറങ്ങൾ, ലോഗോ, ഇഷ്ടമുള്ള വെബ്സൈറ്റുകൾ","రంగులు, లోగో, నచ్చిన వెబ్‌సైట్లు","ಬಣ್ಣಗಳು, ಲೋಗೋ, ಇಷ್ಟದ ವೆಬ್‌ಸೈಟ್‌ಗಳು","الألوان، الشعار، مواقع تعجبك"],"Continue":["தொடர்க","आगे बढ़ें","തുടരുക","కొనసాగించండి","ಮುಂದುವರಿಸಿ","متابعة"],"Please fill your name, business name and a valid 10 digit phone number.":["உங்கள் பெயர், தொழில் பெயர், சரியான 10 இலக்க தொலைபேசி எண்ணை நிரப்புங்கள்.","कृपया अपना नाम, बिज़नेस का नाम और सही 10 अंकों का फ़ोन नंबर भरें।","നിങ്ങളുടെ പേര്, ബിസിനസ് പേര്, ശരിയായ 10 അക്ക ഫോൺ നമ്പർ നൽകൂ.","మీ పేరు, వ్యాపారం పేరు, సరైన 10 అంకెల ఫోన్ నంబర్ నింపండి.","ನಿಮ್ಮ ಹೆಸರು, ವ್ಯಾಪಾರದ ಹೆಸರು, ಸರಿಯಾದ 10 ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆ ತುಂಬಿ.","يرجى إدخال اسمك واسم النشاط ورقم هاتف صحيح من 10 أرقام."],"WhatsApp order button":["வாட்ஸ்அப் ஆர்டர் பட்டன்","व्हाट्सऐप ऑर्डर बटन","വാട്സ്ആപ്പ് ഓർഡർ ബട്ടൺ","వాట్సాప్ ఆర్డర్ బటన్","ವಾಟ್ಸಾಪ್ ಆರ್ಡರ್ ಬಟನ್","زر طلب واتساب"],"Booking or enquiry form":["முன்பதிவு / விசாரணை படிவம்","बुकिंग या पूछताछ फ़ॉर्म","ബുക്കിംഗ് / അന്വേഷണ ഫോം","బుకింగ్ / ఎంక్వైరీ ఫారం","ಬುಕಿಂಗ್ / ವಿಚಾರಣೆ ಫಾರ್ಮ್","نموذج حجز أو استفسار"],"Photo gallery":["புகைப்பட தொகுப்பு","फ़ोटो गैलरी","ഫോട്ടോ ഗാലറി","ఫోటో గ్యాలరీ","ಫೋಟೋ ಗ್ಯಾಲರಿ","معرض صور"],"Google Maps location":["கூகுள் மேப்ஸ் இடம்","गूगल मैप्स लोकेशन","ഗൂഗിൾ മാപ്സ് ലൊക്കേഷൻ","గూగుల్ మ్యాప్స్ లొకేషన్","ಗೂಗಲ್ ಮ್ಯಾಪ್ಸ್ ಸ್ಥಳ","موقع خرائط جوجل"],"Install as app (PWA)":["ஆப் ஆக நிறுவு (PWA)","ऐप की तरह इंस्टॉल (PWA)","ആപ്പ് ആയി ഇൻസ്റ്റാൾ (PWA)","యాప్‌లా ఇన్‌స్టాల్ (PWA)","ಆಪ್ ಆಗಿ ಇನ್‌ಸ್ಟಾಲ್ (PWA)","تثبيت كتطبيق (PWA)"],"Extra page":["கூடுதல் பக்கம்","अतिरिक्त पेज","അധിക പേജ്","అదనపు పేజీ","ಹೆಚ್ಚುವರಿ ಪುಟ","صفحة إضافية"],"Your order is ready":["உங்கள் ஆர்டர் தயார்","आपका ऑर्डर तैयार है","നിങ്ങളുടെ ഓർഡർ റെഡി","మీ ఆర్డర్ సిద్ధం","ನಿಮ್ಮ ಆರ್ಡರ್ ಸಿದ್ಧ","طلبك جاهز"],"Send it to us on the app you like.":["உங்களுக்குப் பிடித்த ஆப்பில் எங்களுக்கு அனுப்புங்கள்.","अपने पसंदीदा ऐप पर हमें भेजें।","ഇഷ്ടമുള്ള ആപ്പിൽ ഞങ്ങൾക്ക് അയയ്ക്കൂ.","మీకు నచ్చిన యాప్‌లో మాకు పంపండి.","ನಿಮಗಿಷ್ಟದ ಆಪ್‌ನಲ್ಲಿ ನಮಗೆ ಕಳುಹಿಸಿ.","أرسله لنا عبر التطبيق الذي تفضله."],"Call us":["அழையுங்கள்","हमें कॉल करें","വിളിക്കൂ","కాల్ చేయండి","ಕರೆ ಮಾಡಿ","اتصل بنا"],"Email":["மின்னஞ்சல்","ईमेल","ഇമെയിൽ","ఈమెయిల్","ಇಮೇಲ್","البريد"],"Start a new order":["புதிய ஆர்டர் தொடங்கு","नया ऑर्डर शुरू करें","പുതിയ ഓർഡർ തുടങ്ങൂ","కొత్త ఆర్డర్ ప్రారంభించండి","ಹೊಸ ಆರ್ಡರ್ ಆರಂಭಿಸಿ","ابدأ طلبًا جديدًا"],"Order sent. We will reply soon.":["ஆர்டர் அனுப்பப்பட்டது. விரைவில் பதிலளிப்போம்.","ऑर्डर भेज दिया गया। हम जल्द जवाब देंगे।","ഓർഡർ അയച്ചു. ഉടൻ മറുപടി നൽകാം.","ఆర్డర్ పంపబడింది. త్వరలో స్పందిస్తాం.","ಆರ್ಡರ್ ಕಳುಹಿಸಲಾಗಿದೆ. ಶೀಘ್ರದಲ್ಲಿ ಉತ್ತರಿಸುತ್ತೇವೆ.","تم إرسال الطلب. سنرد قريبًا."],"Chat with us":["எங்களுடன் அரட்டை","हमसे चैट करें","ഞങ്ങളുമായി ചാറ്റ് ചെയ്യൂ","మాతో చాట్ చేయండి","ನಮ್ಮೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಿ","تحدث معنا"],"Type your message":["உங்கள் செய்தியை எழுதுங்கள்","अपना संदेश लिखें","സന്ദേശം ടൈപ്പ് ചെയ്യൂ","మీ సందేశం టైప్ చేయండి","ನಿಮ್ಮ ಸಂದೇಶ ಟೈಪ್ ಮಾಡಿ","اكتب رسالتك"],"Send":["அனுப்பு","भेजें","അയയ്ക്കൂ","పంపండి","ಕಳುಹಿಸಿ","إرسال"],"Prices":["விலைகள்","कीमतें","വിലകൾ","ధరలు","ಬೆಲೆಗಳು","الأسعار"],"Contact":["தொடர்பு","संपर्क","ബന്ധപ്പെടുക","సంప్రదించండి","ಸಂಪರ್ಕ","تواصل"],"I have a problem":["எனக்கு ஒரு பிரச்சனை","मुझे समस्या है","എനിക്ക് ഒരു പ്രശ്നമുണ്ട്","నాకు సమస్య ఉంది","ನನಗೆ ಸಮಸ್ಯೆ ಇದೆ","لدي مشكلة"],"Leave a message":["செய்தி விடுங்கள்","संदेश छोड़ें","സന്ദേശം നൽകൂ","సందేశం పంపండి","ಸಂದೇಶ ಬಿಡಿ","اترك رسالة"],"Hi! I can show prices, help you order, or pass your problem to our team. What do you need?":["வணக்கம்! விலைகளைக் காட்டலாம், ஆர்டர் செய்ய உதவலாம், உங்கள் பிரச்சனையை எங்கள் குழுவுக்கு அனுப்பலாம். என்ன வேண்டும்?","नमस्ते! मैं कीमतें दिखा सकता हूँ, ऑर्डर में मदद कर सकता हूँ, या आपकी समस्या हमारी टीम तक पहुँचा सकता हूँ। आपको क्या चाहिए?","ഹലോ! വില കാണിക്കാം, ഓർഡർ ചെയ്യാൻ സഹായിക്കാം, നിങ്ങളുടെ പ്രശ്നം ഞങ്ങളുടെ ടീമിന് അയയ്ക്കാം. എന്താണ് വേണ്ടത്?","నమస్కారం! ధరలు చూపిస్తాను, ఆర్డర్‌కు సహాయం చేస్తాను, మీ సమస్యను మా బృందానికి పంపిస్తాను. మీకు ఏం కావాలి?","ನಮಸ್ಕಾರ! ಬೆಲೆ ತೋರಿಸುತ್ತೇನೆ, ಆರ್ಡರ್‌ಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇನೆ, ನಿಮ್ಮ ಸಮಸ್ಯೆಯನ್ನು ನಮ್ಮ ತಂಡಕ್ಕೆ ಕಳುಹಿಸುತ್ತೇನೆ. ನಿಮಗೆ ಏನು ಬೇಕು?","مرحبًا! يمكنني عرض الأسعار ومساعدتك في الطلب أو إيصال مشكلتك لفريقنا. ماذا تحتاج؟"],"Websites start from":["வலைத்தளங்கள் தொடக்க விலை","वेबसाइट की शुरुआती कीमत","വെബ്സൈറ്റുകൾ തുടങ്ങുന്നത്","వెబ్‌సైట్ ప్రారంభ ధర","ವೆಬ್‌ಸೈಟ್ ಆರಂಭಿಕ ಬೆಲೆ","تبدأ المواقع من"],"Tap below to see styles and exact prices.":["ஸ்டைல்களையும் சரியான விலைகளையும் காண கீழே தட்டவும்.","स्टाइल और सही कीमत देखने के लिए नीचे टैप करें।","ശൈലികളും കൃത്യമായ വിലയും കാണാൻ താഴെ ടാപ്പ് ചെയ്യൂ.","శైలులు, ఖచ్చితమైన ధరలు చూడటానికి కింద నొక్కండి.","ಶೈಲಿ ಮತ್ತು ನಿಖರ ಬೆಲೆ ನೋಡಲು ಕೆಳಗೆ ಒತ್ತಿ.","اضغط أدناه لرؤية الأنماط والأسعار الدقيقة."],"Taking you there.":["அங்கே அழைத்துச் செல்கிறேன்.","आपको वहाँ ले चलता हूँ।","അവിടേക്ക് കൊണ്ടുപോകാം.","అక్కడికి తీసుకెళ్తున్నాను.","ಅಲ್ಲಿಗೆ ಕರೆದೊಯ್ಯುತ್ತೇನೆ.","سآخذك إلى هناك."],"What is your name?":["உங்கள் பெயர் என்ன?","आपका नाम क्या है?","നിങ്ങളുടെ പേര് എന്താണ്?","మీ పేరు ఏమిటి?","ನಿಮ್ಮ ಹೆಸರೇನು?","ما اسمك؟"],"What is your phone number?":["உங்கள் தொலைபேசி எண் என்ன?","आपका फ़ोन नंबर क्या है?","നിങ്ങളുടെ ഫോൺ നമ്പർ എന്താണ്?","మీ ఫోన్ నంబర్ ఏమిటి?","ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ ಏನು?","ما رقم هاتفك؟"],"Please tell us your problem or question.":["உங்கள் பிரச்சனை அல்லது கேள்வியைச் சொல்லுங்கள்.","कृपया अपनी समस्या या सवाल बताएँ।","നിങ്ങളുടെ പ്രശ്നമോ ചോദ്യമോ പറയൂ.","మీ సమస్య లేదా ప్రశ్నను చెప్పండి.","ನಿಮ್ಮ ಸಮಸ್ಯೆ ಅಥವಾ ಪ್ರಶ್ನೆ ಹೇಳಿ.","يرجى كتابة مشكلتك أو سؤالك."],"Thank you. We got your message and will reply soon.":["நன்றி. உங்கள் செய்தி கிடைத்தது, விரைவில் பதிலளிப்போம்.","धन्यवाद। आपका संदेश मिल गया, हम जल्द जवाब देंगे।","നന്ദി. സന്ദേശം ലഭിച്ചു, ഉടൻ മറുപടി നൽകാം.","ధన్యవాదాలు. మీ సందేశం అందింది, త్వరలో స్పందిస్తాం.","ಧನ್ಯವಾದ. ನಿಮ್ಮ ಸಂದೇಶ ತಲುಪಿದೆ, ಶೀಘ್ರದಲ್ಲಿ ಉತ್ತರಿಸುತ್ತೇವೆ.","شكرًا. وصلتنا رسالتك وسنرد قريبًا."],"Sorry, I did not get that. Leave a message and our team will reply.":["மன்னிக்கவும், புரியவில்லை. செய்தி விடுங்கள், எங்கள் குழு பதிலளிக்கும்.","माफ़ कीजिए, समझ नहीं आया। संदेश छोड़ें, हमारी टीम जवाब देगी।","ക്ഷമിക്കണം, മനസ്സിലായില്ല. സന്ദേശം നൽകൂ, ടീം മറുപടി നൽകും.","క్షమించండి, అర్థం కాలేదు. సందేశం పంపండి, మా బృందం స్పందిస్తుంది.","ಕ್ಷಮಿಸಿ, ಅರ್ಥವಾಗಲಿಲ್ಲ. ಸಂದೇಶ ಬಿಡಿ, ನಮ್ಮ ತಂಡ ಉತ್ತರಿಸುತ್ತದೆ.","عذرًا، لم أفهم. اترك رسالة وسيرد فريقنا."],"Could not send. Please use WhatsApp.":["அனுப்ப முடியவில்லை. வாட்ஸ்அப் பயன்படுத்தவும்.","भेज नहीं सके। कृपया व्हाट्सऐप का उपयोग करें।","അയയ്ക്കാൻ കഴിഞ്ഞില്ല. വാട്സ്ആപ്പ് ഉപയോഗിക്കൂ.","పంపలేకపోయాం. దయచేసి వాట్సాప్ ఉపయోగించండి.","ಕಳುಹಿಸಲಾಗಲಿಲ್ಲ. ವಾಟ್ಸಾಪ್ ಬಳಸಿ.","تعذر الإرسال. يرجى استخدام واتساب."],"Enter a valid 10 digit phone number.":["சரியான 10 இலக்க எண்ணை உள்ளிடவும்.","सही 10 अंकों का नंबर डालें।","ശരിയായ 10 അക്ക നമ്പർ നൽകൂ.","సరైన 10 అంకెల నంబర్ ఇవ్వండి.","ಸರಿಯಾದ 10 ಅಂಕಿಯ ಸಂಖ್ಯೆ ನೀಡಿ.","أدخل رقمًا صحيحًا من 10 أرقام."]};
+const LANGS=['en','ta','hi','ml','te','kn','ar'], NAMES=['English','தமிழ்','हिन्दी','മലയാളം','తెలుగు','ಕನ್ನಡ','العربية'], ENN=['English','Tamil','Hindi','Malayalam','Telugu','Kannada','Arabic'];
+let lang='en', busy=false, queued=false; const orig=new WeakMap();
+const t = k => { const i = LANGS.indexOf(lang); return i < 1 ? k : ((T[k]||[])[i-1] || k); };
+const mo = new MutationObserver(() => { if (!queued) { queued = true; queueMicrotask(() => { queued = false; tr(document.body); }); } });
+function tr(root){
+  mo.disconnect();
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: n => (/^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName) || n.parentNode.id === 'sum') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
+  let n; while (n = w.nextNode()) {
+    let o = orig.get(n);
+    if (o === undefined) { o = n.nodeValue; if (!T[o.trim()]) continue; orig.set(n, o); }
+    const k = o.trim(); n.nodeValue = o.replace(k, () => t(k));
+  }
+  document.querySelectorAll('[placeholder]').forEach(e => { if (!e.dataset.ph) e.dataset.ph = e.placeholder; e.placeholder = t(e.dataset.ph); });
+  mo.observe(document.body, { childList:true, subtree:true, characterData:true });
+}
+function setLang(c){
+  lang = c; document.documentElement.lang = c; document.documentElement.dir = c === 'ar' ? 'rtl' : 'ltr';
+  try { localStorage.setItem('lang', c); } catch(e) {}
+  $('langName').textContent = NAMES[LANGS.indexOf(c)]; document.querySelectorAll('#langMenu button').forEach(b => b.classList.toggle('on', b.dataset.c === c));
+  tr(document.body);
+}
+NAMES.forEach((n,i) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = n; b.dataset.c = LANGS[i]; b.onclick = () => { setLang(LANGS[i]); lm(false); }; $('langMenu').appendChild(b); });
+function lm(o){ $('langMenu').classList.toggle('hidden', !o); $('langBtn').setAttribute('aria-expanded', o); }
+$('langBtn').onclick = e => { e.stopPropagation(); lm($('langMenu').classList.contains('hidden')); };
+document.addEventListener('click', () => lm(false));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lm(false); });
+let saved = null; try { saved = localStorage.getItem('lang'); } catch(e) {}
+const guess = (navigator.language || 'en').slice(0,2);
+const first = LANGS.includes(saved) ? saved : (LANGS.includes(guess) ? guess : 'en');
+
+/* ===== EMAIL TO OWNER ===== */
+function sendToOwner(subject, body, fallback){
+  if (FORM.endpoint && FORM.accessKey) {
+    return fetch(FORM.endpoint, { method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'},
+      body: JSON.stringify({ access_key: FORM.accessKey, subject, from_name: CO.name, name: CO.name + ' website', message: body }) })
+      .then(r => r.ok).catch(() => false);
+  }
+  if (fallback) { location.href = `mailto:${CO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; return Promise.resolve(true); }
+  return Promise.resolve(false);
+}
+
+/* ===== ACCOUNT AND MY ORDERS ===== */
+const fbOn = !!(FB.apiKey && window.firebase);
+let fbUser = null, db = null, auth = null;
+const STEPS = [['placed','Order placed'],['advance','Advance paid'],['design','Design ready to review'],['approved','Design approved'],['paid','Full payment done'],['delivered','Website delivered']];
+if (fbOn) {
+  firebase.initializeApp(FB); auth = firebase.auth(); db = firebase.firestore();
+  auth.onAuthStateChanged(u => { fbUser = u; drawAc(); if (!u && !$('v-orders').classList.contains('hidden')) show('home'); });
+}
+function signIn(){
+  if (!fbOn) { toast('Login is not set up yet.'); return Promise.resolve(null); }
+  return auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())  .then(r => { fbUser = r.user; return r.user; }).catch(() => { toast('Sign in did not finish. Please try again.'); return null; });
+}
+function drawAc(){
+  const el = $('acImg'); el.textContent = '';
+  if (fbUser && fbUser.photoURL) { const im = document.createElement('img'); im.src = fbUser.photoURL; im.alt = ''; im.referrerPolicy = 'no-referrer'; el.appendChild(im); }
+  else el.textContent = !fbUser ? '\u{1F464}' : (fbUser.displayName || fbUser.email) ? (fbUser.displayName || fbUser.email).charAt(0).toUpperCase() : '\u{1F4F1}';
+}
+function menuBox(){
+  const m = $('acMenu'); m.innerHTML = '';
+  const line = (txt, cls) => { const d = document.createElement('div'); d.textContent = txt; if (cls) d.className = cls; m.appendChild(d); };
+  const btn = (txt, fn, cls) => { const b = document.createElement('button'); b.className = 'btn ' + (cls||''); b.textContent = txt; b.onclick = () => { m.classList.add('hidden'); fn(); }; m.appendChild(b); };
+  line(fbUser.displayName || fbUser.phoneNumber || 'Your account'); line(fbUser.email || fbUser.phoneNumber || '', 'em');
+  btn('My orders', openOrders); btn('Sign out', () => auth.signOut(), 'line');
+}
+$('acBtn').onclick = e => {
+  e.stopPropagation();
+  if (!fbUser) { afterLogin = null; openLogin(); return; }
+  menuBox(); $('acMenu').classList.toggle('hidden');
+};
+document.addEventListener('click', e => { if (!$('acMenu').contains(e.target)) $('acMenu').classList.add('hidden'); });
+function saveOrder(name, biz, ph, note){
+  if (!fbOn || !fbUser) return;
+  const tot = total(), adv = Math.round(tot * PAY.advancePct / 100);
+  db.collection('orders').add({ uid: fbUser.uid, email: fbUser.email || '', loginPhone: fbUser.phoneNumber || '', name, business: biz, phone: ph, note, industry: S.ind.n, style: S.style.n,
+    extras: picked().map(a => a.n), total: tot, advance: adv, balance: tot - adv, delivery: $('speed').value, status: 'placed',
+    createdAt: firebase.firestore.FieldValue.serverTimestamp() }).catch(() => toast('Could not save your order online. We still got it by message.'));
+}
+function payInto(el, amount, label){
+  const h = document.createElement('div'); h.textContent = `${label}: ${inr(amount)}`; h.style.fontWeight = '600'; el.appendChild(h);
+  if (PAY.upi || PAY.qr) {
+    if (PAY.upi) { const u = document.createElement('div'); u.textContent = `UPI ID: ${PAY.upi}${PAY.payee ? ' (' + PAY.payee + ')' : ''}`; el.appendChild(u); }
+    if (PAY.qr) { const im = document.createElement('img'); im.src = PAY.qr; im.alt = 'UPI QR code'; im.style.cssText = 'max-width:180px;display:block'; el.appendChild(im); }
+    const n = document.createElement('div'); n.className = 'hint'; n.textContent = 'After paying, send the screenshot on WhatsApp. We update your order within a few hours.'; el.appendChild(n);
+  } else { const n = document.createElement('div'); n.className = 'hint'; n.textContent = 'Payment details will be shared on WhatsApp.'; el.appendChild(n); }
+}
+function openOrders(){
+  if (!fbUser) return;
+  show('orders'); const list = $('olist'); list.textContent = 'Loading...';
+  db.collection('orders').where('uid', '==', fbUser.uid).get().then(snap => {
+    list.textContent = '';
+    if (snap.empty) { list.textContent = 'No orders yet. Tap "Order a website" to start.'; return; }
+    const docs = snap.docs.map(d => d.data()).sort((a,b) => (b.createdAt ? b.createdAt.seconds : 0) - (a.createdAt ? a.createdAt.seconds : 0));
+    docs.forEach(o => {
+      const c = document.createElement('div'); c.className = 'ord';
+      const add = (tag, txt, cls) => { const e = document.createElement(tag); e.textContent = txt; if (cls) e.className = cls; c.appendChild(e); return e; };
+      add('h3', `${o.industry} - ${o.style}`);
+      add('div', `Business: ${o.business}   |   Placed: ${o.createdAt ? o.createdAt.toDate().toLocaleDateString() : 'just now'}`, 'hint');
+      add('div', `Extras: ${(o.extras || []).join(', ') || 'None'}`);
+      add('div', `Delivery time: ${o.eta || o.delivery}`);
+      add('div', `Total ${inr(o.total)}  |  Advance ${inr(o.advance)}  |  Balance ${inr(o.balance)}`);
+      const idx = Math.max(0, STEPS.findIndex(s => s[0] === o.status));
+      const ul = document.createElement('ul'); ul.className = 'stp';
+      STEPS.forEach((s, i) => { const li = document.createElement('li'); li.textContent = s[1]; if (i <= idx) li.className = 'on'; ul.appendChild(li); });
+      c.appendChild(ul);
+      const pay = document.createElement('div'); pay.className = 'sum';
+      if (idx === 0) payInto(pay, o.advance, 'Pay advance to start');
+      else if (idx >= 2 && idx < 4) payInto(pay, o.balance, 'Pay balance after you approve');
+      if (pay.childNodes.length) c.appendChild(pay);
+      list.appendChild(c);
+    });
+  }).catch(() => { list.textContent = 'Could not load your orders. Please try again.'; });
+}
+
+
+/* ===== LOGIN POPUP (Google or mobile OTP) ===== */
+let afterLogin = null, confirmRes = null, rc = null;
+function needLogin(fn){ if (!fbOn || fbUser) return fn(); afterLogin = fn; openLogin(); }
+function closeLogin(){ $('lg').classList.add('hidden'); }
+function loginDone(){
+  fbUser = auth.currentUser; drawAc(); closeLogin();
+  if (fbUser && fbUser.phoneNumber && !$('fphone').value) $('fphone').value = fbUser.phoneNumber.slice(-10);
+  const fn = afterLogin; afterLogin = null; if (fn) fn();
+}
+function openLogin(){
+  if (!fbOn) { toast('Login is not set up yet.'); return; }
+  const b = $('lgb'); b.innerHTML = ''; $('lg').classList.remove('hidden');
+  const el = (tag, txt, cls) => { const e = document.createElement(tag); if (txt) e.textContent = txt; if (cls) e.className = cls; b.appendChild(e); return e; };
+  el('h3', 'Sign in to continue');
+  el('div', 'Sign in to place your order and track it in My orders.', 'hint');
+  const g = el('button', 'Continue with Google', 'btn'); g.type = 'button';
+  g.onclick = () => signIn().then(u => { if (u) loginDone(); });
+  el('div', 'or', 'or');
+  const lab = el('label', 'Mobile number'); lab.setAttribute('for', 'lgPh');
+  const ph = document.createElement('input'); ph.type = 'tel'; ph.id = 'lgPh'; ph.placeholder = '10 digit number'; ph.maxLength = 10; ph.autocomplete = 'tel-national'; b.appendChild(ph);
+  const send = el('button', 'Send OTP', 'btn sun'); send.type = 'button';
+  const er = el('div', '', 'er');
+  const rcd = el('div'); rcd.id = 'rcap';
+  const x = el('button', 'Cancel', 'btn line'); x.type = 'button'; x.onclick = () => { afterLogin = null; closeLogin(); };
+  send.onclick = () => {
+    const n = ph.value.replace(/\D/g, '');
+    if (n.length !== 10) { er.textContent = 'Enter a valid 10 digit mobile number.'; return; }
+    er.textContent = ''; send.disabled = true; send.textContent = 'Sending...';
+    try { if (!rc) rc = new firebase.auth.RecaptchaVerifier('rcap', { size: 'invisible' }); } catch (e) {}
+    auth.signInWithPhoneNumber('+91' + n, rc).then(r => { confirmRes = r; otpStep(n); })
+      .catch(() => { er.textContent = 'Could not send the OTP. Check the number and try again.'; send.disabled = false; send.textContent = 'Send OTP'; try { rc.clear(); } catch (e) {} rc = null; });
+  };
+}
+function otpStep(n){
+  const b = $('lgb'); b.innerHTML = '';
+  const el = (tag, txt, cls) => { const e = document.createElement(tag); if (txt) e.textContent = txt; if (cls) e.className = cls; b.appendChild(e); return e; };
+  el('h3', 'Enter the OTP'); el('div', 'We sent a 6 digit code to +91 ' + n + '.', 'hint');
+  const o = document.createElement('input'); o.type = 'text'; o.inputMode = 'numeric'; o.maxLength = 6; o.autocomplete = 'one-time-code'; o.placeholder = '6 digit code'; b.appendChild(o);
+  const er = el('div', '', 'er');
+  const v = el('button', 'Verify and continue', 'btn'); v.type = 'button';
+  v.onclick = () => {
+    if (o.value.replace(/\D/g, '').length !== 6) { er.textContent = 'Enter the 6 digit code.'; return; }
+    v.disabled = true; er.textContent = '';
+    confirmRes.confirm(o.value.trim()).then(() => loginDone()).catch(() => { er.textContent = 'Wrong code. Please try again.'; v.disabled = false; });
+  };
+  const c = el('button', 'Change number', 'btn line'); c.type = 'button'; c.onclick = openLogin;
+}
+
+/* ===== CHAT ASSISTANT ===== */
+const KW = {
+  help:['problem','issue','help','support','complaint','enquiry','inquiry','question','பிரச்சன','உதவி','समस्या','मदद','സഹായം','പ്രശ്ന','సమస్య','సహాయం','ಸಮಸ್ಯೆ','ಸಹಾಯ','مشكل','مساعد'],
+  price:['price','cost','rate','how much','charge','விலை','செலவு','कीमत','कितना','दाम','വില','ചെലവ്','ధర','ఖర్చు','ಬೆಲೆ','ವೆಚ್ಚ','سعر','تكلف','كم'],
+  order:['order','start','buy','want','book','ஆர்டர்','வேண்டும்','ऑर्डर','चाहिए','ഓർഡർ','വേണം','ఆర్డర్','కావాలి','ಆರ್ಡರ್','ಬೇಕು','اطلب','أريد'],
+  how:['how','process','steps','எப்படி','कैसे','എങ്ങനെ','ఎలా','ಹೇಗೆ','كيف'],
+  contact:['contact','call','phone','whatsapp','instagram','email','தொடர்பு','संपर्क','ബന്ധപ്പെ','సంప్రదించ','ಸಂಪರ್ಕ','اتصال','تواصل']
+};
+let cs = null, cd = {}, greeted = false;
+const msgs = $('chatMsgs');
+const scroll = () => msgs.scrollTop = msgs.scrollHeight;
+function bub(txt, who, html){ const d = document.createElement('div'); d.className = 'b ' + who; if (html) d.innerHTML = html; else d.textContent = txt; msgs.appendChild(d); scroll(); return d; }
+function acts(list){ const d = document.createElement('div'); d.className = 'acts'; list.forEach(([k,fn]) => { const b = document.createElement('button'); b.className = 'chip2'; b.type = 'button'; b.textContent = k; b.onclick = fn; d.appendChild(b); }); msgs.appendChild(d); scroll(); }
+function chatOpen(o){ $('chat').classList.toggle('hidden', !o); $('chatFab').classList.toggle('hidden', o);
+  if (o && !greeted) { greeted = true; bub('Hi! I can show prices, help you order, or pass your problem to our team. What do you need?', 'bot'); menu(); } if (o) $('chatIn').focus(); }
+function menu(){ acts([['Prices',doPrice],['Order a website',()=>go('pick')],['How it works',()=>go('how')],['Contact',()=>go('contact')],['I have a problem',startEnq]]); }
+function go(id){ bub('Taking you there.', 'bot'); show('home', id); setTimeout(() => chatOpen(false), 900); }
+function doPrice(){
+  const min = Math.min(...INDUSTRIES.flatMap(i => i.styles.map(s => s.p)));
+  bub('', 'bot', `<span>Websites start from</span> ${inr(min)}`);
+  bub('Tap below to see styles and exact prices.', 'bot'); acts([['Order a website',()=>go('pick')]]);
+}
+function startEnq(){ cs = 'name'; bub('What is your name?', 'bot'); }
+function finishEnq(){
+  const body = `Chat enquiry\nName: ${cd.name}\nPhone: ${cd.phone}\nMessage: ${cd.msg}\nCustomer language: ${ENN[LANGS.indexOf(lang)]}`;
+  sendToOwner('Chat enquiry from ' + cd.name, body, true).then(ok => {
+    if (ok) bub('Thank you. We got your message and will reply soon.', 'bot');
+    else { bub('Could not send. Please use WhatsApp.', 'bot'); acts([['WhatsApp',()=>window.open(`https://wa.me/${CO.whatsapp}?text=${encodeURIComponent(body)}`,'_blank')]]); }
+  });
+}
+$('chatFab').onclick = () => chatOpen(true);
+$('chatX').onclick = () => chatOpen(false);
+function sendChat(){
+  const text = $('chatIn').value.trim(); if (!text) return; $('chatIn').value = '';
+  bub(text, 'me');
+  if (cs === 'name') { cd.name = text; cs = 'phone'; return bub('What is your phone number?', 'bot'); }
+  if (cs === 'phone') { if (text.replace(/\D/g,'').length < 10) return bub('Enter a valid 10 digit phone number.', 'bot'); cd.phone = text; cs = 'msg'; return bub('Please tell us your problem or question.', 'bot'); }
+  if (cs === 'msg') { cd.msg = text; cs = null; return finishEnq(); }
+  if (AI.endpoint) return askAI(text, () => localReply(text));
+  localReply(text);
+}
+$('chatSend').onclick = sendChat;
+$('chatIn').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); sendChat(); } });
+function localReply(text){
+  const l = text.toLowerCase(), has = k => KW[k].some(w => l.includes(w));
+  if (/^(hi+|hello|hey|vanakkam|வணக்கம்|नमस्ते|ഹലോ|నమస్కారం|ನಮಸ್ಕಾರ|مرحبا|السلام عليكم)[\s!.]*$/i.test(text)) { bub('Hi! I can show prices, help you order, or pass your problem to our team. What do you need?', 'bot'); menu(); }
+  else if (has('help')) startEnq(); else if (has('price')) doPrice(); else if (has('order')) go('pick');
+  else if (has('how')) go('how'); else if (has('contact')) go('contact');
+  else { bub('Sorry, I did not get that. Leave a message and our team will reply.', 'bot'); acts([['Leave a message',startEnq],['Prices',doPrice]]); }
+}
+
+/* ===== AI REPLIES (needs the worker) ===== */
+const hist = [];
+function siteInfo(){
+  return `Company: ${CO.name}. WhatsApp +${CO.whatsapp}, phone +${CO.phone}, email ${CO.email}, Instagram @${CO.instagram}.
+We build websites for local businesses in Tamil Nadu, India. Delivery takes 3 to 7 days. Customers pay only after they approve the design. Domain and hosting are extra, about Rs 3,000 to 8,000 per year, set up in the customer's name. The website works in English, Tamil, Hindi, Malayalam, Telugu, Kannada and Arabic. Customers order on this site: pick an industry, pick a style, add extras, see the estimate, choose a budget, then send the order by WhatsApp, email, Telegram, Instagram or phone.
+Industries and styles:
+` + INDUSTRIES.map(i => `- ${i.n}: ` + i.styles.map(s => `${s.n} from Rs ${s.p} (${s.f.join(', ')})`).join('; ')).join('\n') + `
+Extras: ` + ADDONS.map(a => `${a.n} +Rs ${a.p}`).join(', ') + `
+Sections you can send people to: pick (choose industry and style), how (how it works), faq (common questions), contact (contact links).`;
+}
+function askAI(text, fail){
+  hist.push({ role:'user', content:text });
+  const typing = bub('…', 'bot'), L = ENN[LANGS.indexOf(lang)];
+  return fetch(AI.endpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ messages: hist.slice(-12), site: siteInfo(), lang: L }) })
+    .then(r => { if (!r.ok) throw 0; return r.json(); })
+    .then(d => {
+      typing.remove();
+      let rep = String(d.reply || '');
+      const g = rep.match(/\[\[GO:(\w+)\]\]/), e = rep.match(/\[\[ENQUIRY:(\{[\s\S]*?\})\]\]/);
+      rep = rep.replace(/\[\[[\s\S]*?\]\]/g, '').trim();
+      if (!rep) throw 0;
+      hist.push({ role:'assistant', content:rep }); bub(rep, 'bot');
+      if (e) { try { const q = JSON.parse(e[1]); sendToOwner('Chat enquiry from ' + q.name, `Chat enquiry\nName: ${q.name}\nPhone: ${q.phone}\nMessage: ${q.message}\nCustomer language: ${L}`, true); } catch(x) {} }
+      if (g && ['pick','how','faq','contact'].includes(g[1])) setTimeout(() => { show('home', g[1]); chatOpen(false); }, 1400);
+    })
+    .catch(() => { typing.remove(); hist.pop(); fail(); });
+}
+setLang(first);
+</script>
+</body>
+</html>
